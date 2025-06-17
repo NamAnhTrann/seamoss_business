@@ -1,0 +1,72 @@
+[
+  {
+    "productName": "Organic Sea Moss Capsules",
+    "productDescription": "Pure wildcrafted sea moss capsules to support immune health.",
+    "productStock": 150,
+    "productPrice": 29.99,
+    "productImage": "products/product.png"
+  },
+  {
+    "productName": "Sea Moss + Bladderwrack",
+    "productDescription": "Blended with bladderwrack for thyroid and metabolism support.",
+    "productStock": 200,
+    "productPrice": 34.95,
+    "productImage": "products/product.png"
+  },
+  {
+    "productName": "Sea Moss Gel 16oz",
+    "productDescription": "Fresh sea moss gel for smoothies and skincare.",
+    "productStock": 80,
+    "productPrice": 24.50,
+    "productImage": "products/product.png"
+  },
+  {
+    "productName": "Gold Sea Moss Capsules",
+    "productDescription": "High-potency gold sea moss in vegan capsules.",
+    "productStock": 120,
+    "productPrice": 27.00,
+    "productImage": "products/product.png"
+  },
+  {
+    "productName": "Sea Moss Powder",
+    "productDescription": "Finely ground powder ideal for teas and drinks.",
+    "productStock": 95,
+    "productPrice": 19.99,
+    "productImage": "products/product.png"
+  },
+  {
+    "productName": "Purple Sea Moss Capsules",
+    "productDescription": "Rich in antioxidants for skin and energy support.",
+    "productStock": 70,
+    "productPrice": 32.99,
+    "productImage": "products/product.png"
+  },
+  {
+    "productName": "Sea Moss & Turmeric Blend",
+    "productDescription": "Anti-inflammatory blend of sea moss and turmeric.",
+    "productStock": 110,
+    "productPrice": 36.75,
+    "productImage": "products/product.png"
+  },
+  {
+    "productName": "Sea Moss Gummies",
+    "productDescription": "Tasty gummy form packed with sea moss nutrients.",
+    "productStock": 60,
+    "productPrice": 22.49,
+    "productImage": "products/product.png"
+  },
+  {
+    "productName": "Raw Dried Sea Moss",
+    "productDescription": "Sun-dried raw sea moss for DIY preparations.",
+    "productStock": 140,
+    "productPrice": 18.25,
+    "productImage": "products/product.png"
+  },
+  {
+    "productName": "Sea Moss & Elderberry",
+    "productDescription": "Immunity blend of sea moss with elderberry extract.",
+    "productStock": 85,
+    "productPrice": 33.30,
+    "productImage": "products/product.png"
+  }
+]

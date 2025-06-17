@@ -1,1 +1,1 @@
-# seamoss_business
+# seamoss

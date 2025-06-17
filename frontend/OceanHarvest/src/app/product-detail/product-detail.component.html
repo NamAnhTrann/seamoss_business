@@ -1,0 +1,163 @@
+<!-- Breadcrumb Navigation -->
+
+
+<section class="relative max-w-4xl mx-auto my-16 mt-32">
+  <div class="w-full mx-auto px-4 sm:px-6 lg:px-0">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mx-auto max-md:px-2">
+        <!-- Left Column: Product Image -->
+        <div class="img">
+          <div class="img-box h-full max-lg:mx-auto border-2 border-gray-300 rounded-md p-2 shadow-md">
+            <img [src]="product.productImage"
+            [alt]="product.productName + ' image'"
+            class="max-lg:mx-auto lg:ml-auto h-full object-cover rounded-md">
+          </div>
+        </div>
+
+        <!-- Right Column: Product Details -->
+        <div class="data w-full lg:pr-8 pr-0 xl:justify-start justify-center flex items-center max-lg:pb-10 xl:my-2 lg:my-5 my-0">
+          <div class="data w-full max-w-xl">
+            <!-- Product Name -->
+            <h2 class="font-manrope font-bold text-3xl leading-10 text-gray-900 mb-2 capitalize">
+              {{product.productName}}
+            </h2>
+            <!-- Price and Rating -->
+            <div class="flex flex-col sm:flex-row sm:items-center mb-6">
+              <h6 class="font-manrope font-semibold text-2xl leading-9 text-gray-900 pr-5 sm:border-r border-gray-200 mr-5">
+                ${{product.productPrice}}
+              </h6>
+              <div class="flex items-center gap-2">
+                <div class="flex items-center gap-1">
+                  @if(product.productStock === 0){
+                    <p>Out of Stock</p>
+                  } @else {
+                    {{product.productStock}} {{product.productName}} left
+                  }
+                </div>
+              </div>
+            </div>
+            <!-- Product Description -->
+            <p class="text-gray-500 text-base font-normal mb-5">
+              {{product.productDescription}}
+            </p>
+
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#93c093]" fill="none" viewBox="0 0 24 24" stroke="black">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="text-sm text-gray-600">Rich in 92 essential minerals for full-body nourishment.</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#93c093]" fill="none" viewBox="0 0 24 24" stroke="black">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414M16.95 16.95l1.414 1.414M7.05 7.05L5.636 5.636" />
+                </svg>
+                <p class="text-sm text-gray-600">Supports immune, thyroid, and gut health naturally.</p>
+              </div>
+            </div>
+
+
+            <!-- Quantity and Add-to-Cart / Buy Now Buttons -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 py-8">
+              <!-- Quantity Input -->
+              <div class="flex sm:items-center sm:justify-center w-full">
+                <button type="button" class="group py-4 px-6 border border-gray-400 rounded-l-full bg-white transition-all duration-300 hover:bg-black hover:text-white hover:shadow-sm hover:shadow-[#83A683]" (click)="decreaseQuantity()">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-current inline" viewBox="0 0 124 124">
+                    <path d="M112 50H12C5.4 50 0 55.4 0 62s5.4 12 12 12h100c6.6 0 12-5.4 12-12s-5.4-12-12-12z"></path>
+                  </svg>
+                </button>
+                <input type="number" [(ngModel)]="selectedAmount"
+                  class="text-sm font-semibold text-gray-900 cursor-pointer py-[18px] px-4 w-full outline-0 border-y border-gray-400 bg-transparent placeholder:text-gray-900 text-center hover:bg-gray-50"
+                  placeholder="1" min="0" [max]="product.productStock">
+                  <button type="button" class="group py-4 px-6 border border-gray-400 rounded-r-full bg-white transition-all duration-300 hover:bg-black hover:text-white hover:shadow-sm hover:shadow-[#83A683]" (click)="increaseQuantity()">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-current inline" viewBox="0 0 42 42">
+                    <path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"></path>
+                  </svg>
+                </button>
+              </div>
+              <!-- Buy Now Button -->
+               <button
+                (click)="addToCart()"
+                class="group relative inline-flex items-center overflow-hidden rounded-full bg-black px-5 py-4 text-white font-semibold text-lg w-full justify-center gap-2 transition-all duration-500"
+              >
+                <!-- Animated arrow on hover -->
+                <span class="absolute -end-full transition-all group-hover:end-6">
+                  <svg
+                    class="size-5 rtl:rotate-180 stroke-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </span>
+
+                <!-- Main icon + text -->
+                <svg class="stroke-white" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path
+                    d="M10.7394 17.875C10.7394 18.6344 10.1062 19.25 9.32511 19.25C8.54402 19.25 7.91083 18.6344 7.91083 17.875M16.3965 17.875C16.3965 18.6344 15.7633 19.25 14.9823 19.25C14.2012 19.25 13.568 18.6344 13.568 17.875M4.1394 5.5L5.46568 12.5908C5.73339 14.0221 5.86724 14.7377 6.37649 15.1605C6.88573 15.5833 7.61377 15.5833 9.06984 15.5833H15.2379C16.6941 15.5833 17.4222 15.5833 17.9314 15.1605C18.4407 14.7376 18.5745 14.0219 18.8421 12.5906L19.3564 9.84059C19.7324 7.82973 19.9203 6.8243 19.3705 6.16215C18.8207 5.5 17.7979 5.5 15.7522 5.5H4.1394ZM4.1394 5.5L3.66797 2.75"
+                  ></path>
+                </svg>
+
+                <span class="text-sm font-medium transition-all group-hover:me-4">Add to cart</span>
+              </button>
+
+            </div>
+            <div class="mt-4">
+              <a
+              routerLink="/product-page"
+              class="group relative block w-full overflow-hidden rounded-full border border-white bg-black px-4 py-2 text-center focus:outline-none transition-all duration-500"
+            >
+              <span
+                class="absolute inset-y-0 left-0 w-[2px] bg-white transition-all duration-500 group-hover:w-full"
+              ></span>
+              <span
+                class="relative z-10 text-sm font-semibold text-white transition-colors duration-500 group-hover:text-black"
+              >
+                Back to shopping
+              </span>
+            </a>
+            </div>
+
+            <!-- Additional Static Product Benefits -->
+            <div class="mt-8 border-t pt-4">
+              <ul class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                <li>
+                  <svg class="mx-auto mb-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9 9 9-9"/>
+                  </svg>
+                  <p class="text-sm font-medium text-gray-900">Free Shipping</p>
+                  <p class="text-xs text-gray-500">On orders over $50</p>
+                </li>
+                <li>
+                  <svg class="mx-auto mb-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                  </svg>
+                  <p class="text-sm font-medium text-gray-900">30 Days Return</p>
+                  <p class="text-xs text-gray-500">Hassle-free returns</p>
+                </li>
+                <li>
+                  <svg class="mx-auto mb-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                  </svg>
+                  <p class="text-sm font-medium text-gray-900">Secure Payment</p>
+                  <p class="text-xs text-gray-500">100% secure payment</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</section>
+
+

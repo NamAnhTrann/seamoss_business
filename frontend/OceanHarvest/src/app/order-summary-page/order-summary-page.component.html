@@ -1,0 +1,152 @@
+<section class="mt-12 bg-white py-8 antialiased md:py-16">
+  <form  class="mx-auto max-w-screen-xl px-4 2xl:px-0" >
+    <div class="mt-6 sm:mt-8 lg:flex lg:items-start lg:gap-12 xl:gap-16">
+      <div class="min-w-0 flex-1 space-y-8">
+        <div class="space-y-4">
+          <h2 class="text-xl font-semibold text-gray-900">Delivery Details</h2>
+
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+
+            <div>
+              <label for="last_name" class="mb-2 block text-sm font-medium text-gray-900"> Your Last Name </label>
+              <input type="text" id="last_name" name="lastName" [(ngModel)]="User.userLastName" class="placeholder-gray-400 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Bonnie Green" required />
+            </div>
+
+            <div>
+              <label for="first_name" class="mb-2 block text-sm font-medium text-gray-900"> Your First Name </label>
+              <input type="text" id="first_name" name="firstName" [(ngModel)]="User.userFirstName" class="placeholder-gray-400 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Bonnie Green" required />
+            </div>
+
+
+            <div>
+              <label for="phone-input" class="mb-2 block text-sm font-medium text-gray-900">Phone Number*</label>
+              <input type="tel" id="phone-input" name="phoneNumber" [(ngModel)]="User.userPhoneNumber" placeholder="123-456-7890"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900
+                       focus:border-primary-500 focus:ring-primary-500
+                       dark:border-gray-600 dark:placeholder:text-gray-400"
+                required />
+            </div>
+
+            <div>
+              <label for="select-country-input-3" class="block text-sm font-medium text-gray-900"> Country* </label>
+              <select id="select-country-input-3" name="userLocationCountry" [(ngModel)]="Location.userLocationCountry"  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500">
+                <option value="">Select Country</option>
+                <option value="Australia">Australia</option>
+                <option value="France">France</option>
+                <option value="Spain">Spain</option>
+                <option value="United">United Kingdom</option>
+                <option value="Vietnam">Vietnam</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="city-input" class="mb-2 block text-sm font-medium text-gray-900">City*</label>
+              <input type="text" id="city-input" name="userLocationCity" [(ngModel)]="Location.userLocationCity"  placeholder="Enter your city"
+                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900
+                       focus:border-primary-500 focus:ring-primary-500
+                       dark:border-gray-600 dark:placeholder:text-gray-400"
+                required />
+            </div>
+
+            <div>
+              <label for="address" class="mb-2 block text-sm font-medium text-gray-900"> Full Address* </label>
+              <input type="text" id="address" name="userLocationStreet" [(ngModel)]="Location.userLocationStreet"  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="123 Example St" required />
+            </div>
+
+            <div>
+              <label for="state" class="mb-2 block text-sm font-medium text-gray-900"> State </label>
+              <input type="text" id="state" name="userLocationState" [(ngModel)]="Location.userLocationState"  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Enter Your State" required />
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-gray-900">Delivery Methods</h3>
+
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4">
+              <div class="flex items-start">
+                <div class="flex h-5 items-center">
+                  <input id="dhl" aria-describedby="dhl-text" type="radio" name="delivery-method" value="" class="h-4 w-4 border-gray-300 bg-white text-primary-600 focus:ring-2 focus:ring-primary-600" checked />
+                </div>
+
+                <div class="ms-4 text-sm">
+                  <label for="fedex" class="font-medium leading-none text-gray-900"> Free Delivery - FedEx </label>
+                  <p id="fedex-text" class="mt-1 text-xs font-normal text-gray-500">Get it by Friday, 13 Dec 2023</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4">
+              <div class="flex items-start">
+                <div class="flex h-5 items-center">
+                  <input id="fedex" aria-describedby="fedex-text" type="radio" name="delivery-method" value="" class="h-4 w-4 border-gray-300 bg-white text-primary-600 focus:ring-2 focus:ring-primary-600" />
+                </div>
+
+                <div class="ms-4 text-sm">
+                  <label for="dhl" class="font-medium leading-none text-gray-900"> $15 - DHL Fast Delivery </label>
+                  <p id="dhl-text" class="mt-1 text-xs font-normal text-gray-500">Get it by Tommorow</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4">
+              <div class="flex items-start">
+                <div class="flex h-5 items-center">
+                  <input id="express" aria-describedby="express-text" type="radio" name="delivery-method" value="" class="h-4 w-4 border-gray-300 bg-white text-primary-600 focus:ring-2 focus:ring-primary-600" />
+                </div>
+
+                <div class="ms-4 text-sm">
+                  <label for="express" class="font-medium leading-none text-gray-900"> $49 - Express Delivery </label>
+                  <p id="express-text" class="mt-1 text-xs font-normal text-gray-500">Get it today</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label for="voucher" class="mb-2 block text-sm font-medium text-gray-900"> Enter a gift card, voucher or promotional code </label>
+          <div class="flex max-w-md items-center gap-4">
+            <input type="text" id="voucher" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="" required />
+            <button type="button" class="flex items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300">Apply</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md">
+        <div class="flow-root">
+          <div class="-my-3 divide-y divide-gray-200">
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt class="text-base font-normal text-gray-500">Subtotal</dt>
+              <dd class="text-base font-medium text-gray-900">${{cartTotalPrice() | number:'1.2-2'}} </dd>
+            </dl>
+
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt class="text-base font-normal text-gray-500">Store Pickup</dt>
+              <dd class="text-base font-medium text-gray-900">Free</dd>
+            </dl>
+
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt class="text-base font-normal text-gray-500">VAT (10%)</dt>
+              <dd class="text-base font-medium text-gray-900">${{getVAT() | number:'1.2-2'}}</dd>
+            </dl>
+
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt class="text-base font-bold text-gray-900">Total</dt>
+              <dd class="text-base font-bold text-gray-900">${{ getTotalPrice() | number:'1.2-2'}}</dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <button type="submit" (click)="proceedToPayment()" class="flex w-full items-center justify-center rounded-lg bg-black px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4  focus:ring-primary-300">Proceed to Payment</button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</section>
